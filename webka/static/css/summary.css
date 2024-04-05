@@ -1,0 +1,56 @@
+.main{
+    width: 1000px;
+    margin: 38px auto;
+}
+.main .section {
+    margin-bottom: 40px;
+ }
+ .main .section form,
+  .main .section form label,
+   .main .section form select,
+    .main .section form select option,
+     .main .section p,
+      .main .section table,
+       .main .box form,
+        .main .box form label,
+         .main .box form input{
+    font-size: 20px;
+ }
+ .main .section form select {
+    background: transparent;
+    color: white;
+    outline: none;
+ }
+ .main .section form select option{
+    background: black;
+ }
+ .main .section form button,
+ .main .box form button{
+     background: transparent;
+    display: inline-block;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px 14px;
+}
+ .main .section form button:hover,
+ .main .box form button:hover{
+    cursor: pointer;
+    border-radius: 7px;
+    background: linear-gradient(90deg, #6923d8, #ad25d3);
+    color:black;
+    transition-duration: .5s;
+}
+.main .section table *{
+    padding: 7px 7px;
+}
+.main .box{
+    font-size: 20px;
+}
+.main .box form input{
+     font-size: 18px;
+     outline: none;
+     color: white;
+     background-color: transparent;
+}

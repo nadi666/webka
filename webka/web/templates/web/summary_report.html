@@ -1,0 +1,67 @@
+{% extends 'db.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/summary.css' %}">
+<div class="main">
+<div class="section">
+        <form method="POST">
+            {% csrf_token %}
+            <label for="month">Select month:</label>
+            <select name="month" id="month">
+                <option  value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+            <button type="submit">Filter</button>
+        </form>
+        <p style="padding: 7px 8px;" >Total Sum for the selected month: {{ total_sum }}</p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Report Name</th>
+                    <th>Manager</th>
+                    <th>Address</th>
+                    <th>Report Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                <tr>
+                    <td>{{ report.report_name }}</td>
+                    <td>{{ report.manager }}</td>
+                    <td>{{ report.report_address }}</td>
+                    <td>{{ report.report_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>
+    <div class="box">
+       <!-- <form method="POST">
+            {% csrf_token %}
+            <label for="report_date">Выберите дату:</label>
+            <input type="date"  id="report_date" name="report_date">
+            <button type="submit">Показать отчеты</button>
+        </form> -->
+        <h2>Отчеты {{ report.report_date }}</h2>
+        {% if reports %}
+            <ol class="reports">
+                {% for report in reports %}
+                    <li>{{ report.manager }} : <br> {{ report.report_name }} <p style="display: inline-block; text-align: right; position: absolute; right: 460px;">---------------- {{ report.report_sum }}</p></li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            <p class="message">Нет отчетов за выбранную дату.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

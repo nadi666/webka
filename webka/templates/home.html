@@ -1,0 +1,16 @@
+{% extends 'db.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <article>
+            Программа оснащенна удобными функциями для комфортной работы менеджеров и качественнам контролем администрации.
+        </article>
+    <div class="btn">
+        <a href="{% url 'report:daily_report' %}">Начать работу</a>
+    </div>
+<div class="imag">
+    <img style="width: 500px; height: 720px; position: absolute; z-index: 3;" src="{% static 'image/Mask group.png' %}" alt="image">
+    <img style="width: 411.76px; height: 601.26px; transform: rotate(12deg); z-index: 2; position: absolute; top: 106px; left: 270px;" src="{% static 'image/Mask group (1).png' %}" alt="image">
+    <img style="width: 323.53px; height: 483.38px; display: block; transform: rotate(18deg); z-index: 1; position: absolute; top: 248px; left: 402px;" src="{% static 'image/Mask group (2).png' %}" alt="image">
+</div>
+{% endblock %}

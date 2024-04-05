@@ -1,0 +1,25 @@
+{% extends 'db.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+<div class="register">
+    <h2>the form to create</h2>
+    <div class="forms">
+            <form method="post">
+                {{ form }}
+                {% csrf_token %}
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
+        <a class="links" href="{% url 'report:daily_report' %}">Закрыть</a>
+         <p class="quetion">There are no saved managers? <br> <a href="{% url 'report:manager_create' %}">create new manager</a></p>
+            <div class="new_manager" style="display: none;">
+                <form action="" method="post" class="forms">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                </form>
+                <a class="links" href="{% url 'report:daily_create' %}">Закрыть</a>
+            </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ .register{
+    width: 469px;
+    height: 645px;
+    margin: 100px auto;
+    border: 1px solid #d70e0e;
+    box-shadow: 0 0 5px #d70e0e,
+                0 0 3px #d70e0e,
+                0 0 26px #d70e0e,
+                0 0 126px #d70e0e;
+    border-radius: 5px;
+    position: relative;
+ }
+.register h2{
+    font-size: 48px;
+    letter-spacing: 10.2px;
+    text-align: center;
+    margin-top: 20px;
+}
+.forms{
+    width: 366px;
+    height: 361px;
+    margin: 40px 51px;
+    position: relative;
+    padding-top: 10px;
+}
+.forms .helptext{
+    display: none;
+}
+.forms input{
+     width: 100%;
+     padding: 10px 0;
+     font-size: 16px;
+     color: #fff;
+     margin-bottom: 30px;
+     outline: none;
+     background: transparent;
+     border: none;
+     border-bottom: 1px solid white;
+     letter-spacing: 2px;
+}
+.forms label{
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    pointer-events: none;
+    transition: .5s;
+    letter-spacing: 4px;
+}
+.forms button{
+    font-size: 24px;
+    width: 267px;
+    height: 46px;
+    letter-spacing: 6px;
+    font-weight: 700;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+    margin: 20px auto;
+    display: block;
+    transition-duration: .5s;
+}
+.forms button:hover{
+    transition-duration: .5s;
+    box-shadow: 0 0 8px #d70e0e,
+                0 0 4px #d70e0e,
+                0 0 51px #d70e0e,
+                0 0 118px #d70e0e;
+    border: none;
+}
+.links{
+    width: 80%;
+    position: absolute;
+    bottom: 71px;
+    left: 41px;
+    text-align: center;
+}
+.links a{
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition-duration: .5s;
+}
+.links a:hover{
+    background-image: linear-gradient(90deg, #c700ff, #6300ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition-duration: .5s;
+}

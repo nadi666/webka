@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="filter" method="POST">
+        {% csrf_token %}
+        <label for="month">Select month:</label>
+        <select name="month" id="month">
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+            <!-- Добавьте остальные месяцы по аналогии -->
+        </select>
+        <br>
+        <button type="submit">Фильтр</button>
+    </form>
+</div>
+{% if reports %}
+<table border="1" style="border-color: #c4c4c4; width: 1500px;">
+    <tr>
+        <th>name of the report</th>
+        <th>manager's name</th>
+        <th>address</th>
+        <th>sum</th>
+        <th>date</th>
+        <th colspan="2">redactor</th>
+    </tr>
+    {% for report in reports %}
+            <tr>
+                <td>{{ report.report_name }}</td>
+                <td>{{ report.manager }}</td>
+                <td>{{ report.report_address }}</td>                    
+                <td>{{ report.report_sum }}</td>
+                <td>{{ report.report_date }}</td>
+                {% if report.report_date.month == today.month %}
+                    <td class="edit"><a href="{% url 'report:edit_report' report.pk %}">edit</a></td>
+                    <td class="edit"><form method="POST" action="{% url 'report:delete_report' report.pk %}">{% csrf_token %}<button type="submit">delete</button></form></td>
+                {% else %}
+                    <td colspan="2">View only</td>
+                {% endif %}
+            </tr>
+    {% empty %}
+        <tr><td colspan="7">nothing</td></tr>
+    {% endfor %}
+</table>
+{% else %}
+<div class="message"><p>Нет данных, удовлетворяющих заданным критериям!</p></div>
+{% endif %}
+</body>
+</html>

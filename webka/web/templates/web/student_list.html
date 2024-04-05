@@ -1,0 +1,43 @@
+{% extends 'db.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+  <div class="func">
+    <h1>Студенты</h1>
+  </div>
+      <table border="1" style="text-align: center;" width="1347px">
+          {% csrf_token %}
+          <tr>
+              <th>ФИО</th>
+              <th>Пол</th>
+              <th>Адресс</th>
+              <th>Возраст</th>
+              <th>Номер телефона</th>
+              <th>Специальность</th>
+              <th>Форма обучения</th>
+              <th>Изменить</th>
+              <th>Удалить</th>
+          </tr>
+          {% for student in students %}
+              <tr>
+                  <td>{{ student.last_name }} {{ student.name }} {{ student.patronymic }}</td>
+                  <td>{{ student.sex }}</td>
+                  <td>{{ student.address }}</td>
+                  <td>{{ student.age }}</td>
+                  <td>{{ student.phone }}</td>
+                  <td>{{ student.speciality }}</td>
+                  <td>{{ student.form_edu }}</td>
+              </tr>
+          {% empty %}
+              <tr>
+                <td colspan="10" style="padding: 15px;
+                                       text-align: center;">Ещё нет студентов.</td>
+              </tr>
+          {% endfor %}
+    </table>
+<script>
+    document.getElementById("printButton").addEventListener("click", function () {
+        window.print();
+    });
+</script>
+{% endblock content %}

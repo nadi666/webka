@@ -1,0 +1,141 @@
+main{
+    width: 1576px;
+    height: 100%;
+    padding-bottom: 20px;
+    margin: 66px auto;
+}
+main .filter{
+    width: 550px;
+    height: 50px;
+    margin: 0 auto;
+    padding-top: 9px;
+    position: relative;
+}
+main form label{
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+    text-align: left;
+    margin-right: 20px;
+}
+main form select{
+    width: 200px;
+    height: 22px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ad25d3;
+    color: white;
+}
+main form select option{
+    background: black;
+    color:   white;
+    font-size: 18px ;
+}
+main .btn_filter{
+    background: transparent;
+    display: block;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 27px;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px 14px;
+}
+main .btn_filter:hover{
+    cursor: pointer;
+    border-radius: 7px;
+    background: linear-gradient(90deg, #6923d8, #ad25d3);
+    color:black;
+    transition-duration: .5s;
+}
+main table{
+    margin: 0 auto;
+    border: none;
+    padding-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+main table tr th,
+main table tr td{
+    padding: 5px 7px;
+}
+main table tr td a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+}
+main table tr td form button{
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px 14px;
+    cursor: pointer;
+}
+main .function{
+    width: 550px;
+    height: 43px;
+    display: block;
+    position: relative;
+    bottom: -17px;
+    left: 477px;
+}
+main .function li{
+    padding: 11px 13px;
+    list-style-type: none;
+    display: inline-block;
+}
+main .function li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 7px;
+}
+main .function a:hover{
+    background: linear-gradient(90deg, #6923d8, #ad25d3);
+    color: black;
+    cursor: pointer;
+}
+main .message{
+    width: 784px;
+    height: 46px;
+    position: absolute;
+    top: 210px;
+    left: 517px;
+}
+main .message p{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 400;
+}
+/* popup.css */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

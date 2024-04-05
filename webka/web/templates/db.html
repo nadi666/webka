@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/db.css' %}">
+    <title>Daily Report</title>
+</head>
+<body>
+<div class="main-wrapper">
+    <div class="wrapper-item">
+        <div class="items">
+            <h1>Daily<span>Report</span></h1>
+            <div class="nav">
+                <ul class="navi">
+                    <li>User: <p >{{ user }}</p></li>
+                    <li><a href="{% url 'home' %}">Домой</a></li>
+                </ul>
+            </div>
+            <div class="log">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">выход</a>
+                {% else %}
+                    <a href="{% url 'login' %}">войти</a> |
+                    <a href="{% url 'register' %}">регистрация</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% block content %} {% endblock %}
+</body>
+</html>
